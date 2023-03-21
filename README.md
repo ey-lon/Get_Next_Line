@@ -1,5 +1,7 @@
 # Get_Next_Line
-char  *get_next_line(int fd);
+| prototype |
+| --------- |
+| char  *get_next_line(int fd); |
 
 This function returns a single line from a given file descriptor.
 
