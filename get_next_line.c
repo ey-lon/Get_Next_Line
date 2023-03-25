@@ -78,7 +78,6 @@ static char	*ft_rmline(char *buf_old)
 	char	*buf_new;
 
 	i = 0;
-	j = 0;
 	while (buf_old[i] != '\n' && buf_old[i] != '\0')
 		i++;
 	if (buf_old[i] == '\n')
@@ -89,10 +88,10 @@ static char	*ft_rmline(char *buf_old)
 		return (NULL);
 	}
 	buf_new = ft_calloc(ft_strlen(buf_old) - i + 1, sizeof(char));
-	while (buf_old[i] != '\0')
+	j = 0;
+	while (buf_old[i + j] != '\0')
 	{
-		buf_new[j] = buf_old[i];
-		i++;
+		buf_new[j] = buf_old[i + j];
 		j++;
 	}
 	free(buf_old);
