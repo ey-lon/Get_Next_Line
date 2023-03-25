@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   get_next_line.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: abettini <marvin@42.fr>                    +#+  +:+       +#+        */
+/*   By: marvin <marvin@student.42.fr>              +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2022/10/13 08:58:18 by abettini          #+#    #+#             */
-/*   Updated: 2022/11/07 15:43:30 by abettini         ###   ########.fr       */
+/*   Updated: 2023/03/25 11:49:01 by marvin           ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,13 +81,14 @@ static char	*ft_rmline(char *buf_old)
 	j = 0;
 	while (buf_old[i] != '\n' && buf_old[i] != '\0')
 		i++;
+	if (buf_old[i] == '\n')
+		i++;
 	if (!buf_old[i])
 	{
 		free(buf_old);
 		return (NULL);
 	}
 	buf_new = ft_calloc(ft_strlen(buf_old) - i + 1, sizeof(char));
-	i++;
 	while (buf_old[i] != '\0')
 	{
 		buf_new[j] = buf_old[i];
